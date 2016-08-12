@@ -5,7 +5,7 @@ from datetime import datetime
 MIME_TYPE_JSON = 'application/json'
 CONTENT_TYPE = 'Content-type'
 
-def api_handler():
+def api_handler(i):
 
    response = None
 
@@ -17,7 +17,7 @@ def api_handler():
                 
       end = datetime.now()
       diff = end - begin
-      print "GET api execution time: " + str(diff)             
+      print str(i) + " execution time: " + str(diff)             
                 
    except (requests.exceptions.RequestException, Exception) as exception:
       raise exception
@@ -28,10 +28,7 @@ def api_handler():
 print 'started at: ' + str(datetime.now())
 
 for i in range(1, 100):
-   print i
-   api_handler()
+   api_handler(i)
    time.sleep(1)
 
-
 print 'ended at: ' + str(datetime.now())
-
