@@ -25,7 +25,8 @@ def api_handler():
    return response
 
 for i in range(1, 100):
-	api_handler()
-	time.sleep(1)
+   print i
+   api_handler()
+   time.sleep(1)
 
 
