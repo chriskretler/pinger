@@ -24,9 +24,14 @@ def api_handler():
 
    return response
 
+
+print 'started at: ' + str(datetime.now())
+
 for i in range(1, 100):
    print i
    api_handler()
    time.sleep(1)
 
+
+print 'ended at: ' + str(datetime.now())
 
