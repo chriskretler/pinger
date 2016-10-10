@@ -1,6 +1,7 @@
 import requests
 import time
 from datetime import datetime
+from subprocess import call
 
 MIME_TYPE_JSON = 'application/json'
 CONTENT_TYPE = 'Content-type'
@@ -11,10 +12,11 @@ def api_handler(i):
 
    try:
       begin = datetime.now()
+#	  call(["host", "google.com"])
       headers = {CONTENT_TYPE: MIME_TYPE_JSON}
-
       response = requests.get("https://www.google.com/logos/doodles/2016/2016-doodle-fruit-games-day-8-5666133911797760.3-hp.gif", headers=headers)
-                
+	  #dig
+               
       end = datetime.now()
       diff = end - begin
       print str(i) + " execution time: " + str(diff)             
