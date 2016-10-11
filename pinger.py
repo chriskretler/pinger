@@ -34,7 +34,7 @@ def api_handler(i):
 
 print 'started at: ' + str(datetime.now())
 
-for i in range(1, 10000):
+for i in range(1, 100000):
    api_handler(i)
    time.sleep(3)
 
