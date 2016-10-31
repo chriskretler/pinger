@@ -5,6 +5,8 @@ MAINTAINER Chris Kretler <ckretler@umich.edu>
 RUN apt-get update \
 	&& apt-get install -y python python-pip host \
 	&& pip install requests
+	
+RUN apt-get install net-tools
 
 WORKDIR /app/
 
