@@ -1,7 +1,7 @@
 kind: "BuildConfig"
 apiVersion: "v1"
 metadata:
-  name: "python-sample" 
+  name: "pinger" 
 spec:
   runPolicy: "Serial" 
   triggers: 
