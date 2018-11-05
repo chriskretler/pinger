@@ -11,10 +11,11 @@ spec:
     git:
       uri: "https://github.com/chriskretler/pinger"
   strategy: 
-    sourceStrategy:
+    dockerStrategy:
       from:
         kind: "ImageStreamTag"
-        name: "python:2.7"
+        name: "ubuntu:16.04"
+    type: Docker
   output: 
     to:
       kind: "ImageStreamTag"
