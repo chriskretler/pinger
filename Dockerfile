@@ -12,4 +12,5 @@ WORKDIR /app/
 
 COPY . /app/
 
-CMD ["python", "pinger.py"]
+#CMD ["python", "pinger.py"]
+CMD ["python", "dns.py"]

@@ -1,4 +1,5 @@
 import requests
+import traceback
 import time
 from datetime import datetime
 from subprocess import call
@@ -8,7 +9,7 @@ CONTENT_TYPE = 'Content-type'
 
 def api_handler():
 
-   response = None
+   #response = None
 
    try:
       begin = datetime.now()
@@ -20,24 +21,25 @@ def api_handler():
       end = datetime.now()
       diff = end - begin
       #print str(i) + " execution time: " + str(diff.total_seconds())
-      print "execution time: " + str(diff.total_seconds()) + "\n"
+      #print "execution time: " + str(diff.total_seconds()) + "\n"
 
       #if diff.total_seconds() > 3:
       #  print "clock time: " + str(end)            
       #  print call(["host", "-v", "google.com"])
                 
 #   except (requests.exceptions.RequestException, Exception) as exception:
-   except (Exception) as exception:
-      raise exception
+   except Exception as e:
+      print "an exception was encountered" + traceback.format_exc()
+      
 
-   return response
+   #return response
 
 
-print 'started at: ' + str(datetime.now())
+#print 'started at: ' + str(datetime.now())
 
 #for i in range(1, 100000):
 while(True):
    api_handler()
    time.sleep(3)
 
-print 'ended at: ' + str(datetime.now())
+#print 'ended at: ' + str(datetime.now())
