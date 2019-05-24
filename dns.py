@@ -1,17 +1,21 @@
-import traceback
-import socket
 import time
-from subprocess import call
+import subprocess
+import datetime
 
-def api_handler():
+def dns_lookup():
    try:
-      #socket.getaddrinfo("dig-mysql.miserver.it.umich.edu", 3306)
-      call(["host", "dig-mysql.miserver.it.umich.edu"])
+      results = subprocess.run(
+      ["dig", "dig-mysql.miserver.it.umich.edu"], 
+      capture_output=True, text=True)
       
+      if '141.211.7.100' not in results.stdout:
+         print(datetime.datetime.now())
+         print(results.stdout.splitlines())
+         print('\n')    
+
    except Exception as e:
-      print "an exception was encountered" + traceback.format_exc()
-      call(["host", "-v", "dig-mysql.miserver.it.umich.edu"])
+      print("an exception was encountered: " + format(e))
 
 while(True):
-   api_handler()
+   dns_lookup()
    time.sleep(3)

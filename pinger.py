@@ -7,16 +7,12 @@ from subprocess import call
 MIME_TYPE_JSON = 'application/json'
 CONTENT_TYPE = 'Content-type'
 
-def api_handler():
-
-   #response = None
+def pinger():
 
    try:
       begin = datetime.now()
-      #call(["host", "-v", "dig-mysql.miserver.it.umich.edu"])
-      call(["host", "dig-mysql.miserver.it.umich.edu"])
       #headers = {CONTENT_TYPE: MIME_TYPE_JSON}
-      #response = requests.get("https://www.google.com", headers=headers)
+      #response = requests.get("dig-mysql.miserver.it.umich.edu", headers=headers)
 
       end = datetime.now()
       diff = end - begin
@@ -29,17 +25,15 @@ def api_handler():
                 
 #   except (requests.exceptions.RequestException, Exception) as exception:
    except Exception as e:
-      print "an exception was encountered" + traceback.format_exc()
-      
+      print("an exception was encountered" + traceback.format_exc())
 
-   #return response
 
 
 #print 'started at: ' + str(datetime.now())
 
 #for i in range(1, 100000):
 while(True):
-   api_handler()
+   pinger()
    time.sleep(3)
 
 #print 'ended at: ' + str(datetime.now())
