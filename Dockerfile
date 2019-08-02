@@ -9,5 +9,6 @@ WORKDIR /app/
 
 COPY . /app/
 
+CMD ["tail", "-f", "/dev/null"]
 #CMD ["python", "pinger.py"]
-CMD ["python", "dns.py"]
+#CMD ["python", "dns.py"]
