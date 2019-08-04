@@ -21,7 +21,7 @@ def pinger():
 
       #if diff.total_seconds() > 3:
       #  print "clock time: " + str(end)            
-      #  print call(["host", "-v", "google.com"])
+      #  print call(["dig", "-v", "google.com"])
                 
 #   except (requests.exceptions.RequestException, Exception) as exception:
    except Exception as e:

@@ -5,8 +5,8 @@ import datetime
 def dns_lookup():
    try:
       results = subprocess.run(
-      ["dig", "dig-mysql.miserver.it.umich.edu"], 
-      capture_output=True, text=True)
+      ["dig", "dig-mysql.miserver.it.umich.edu", 
+      capture_output=True, text=True])
       
       if '141.211.7.100' not in results.stdout:
          print(datetime.datetime.now())
