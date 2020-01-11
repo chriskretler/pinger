@@ -1,9 +1,9 @@
-FROM python:3.7
+FROM python:3.8
 
 MAINTAINER Chris Kretler <ckretler@umich.edu>
 
 RUN apt-get update \
-	&& apt-get install -y curl net-tools dnsutils
+	&& apt-get install -y curl net-tools dnsutils traceroute
 
 WORKDIR /app/
 
