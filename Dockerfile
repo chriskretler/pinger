@@ -5,11 +5,13 @@ MAINTAINER Chris Kretler <ckretler@umich.edu>
 RUN apt-get update \
 	&& apt-get install -y curl net-tools dnsutils traceroute
 
+ADD requirements .
+RUN pip install -r requirements
+
 WORKDIR /app/
+COPY /src .
+RUN chmod +x start.sh
 
-COPY *.py /app/
+ENV SITES https://google.com
 
-#CMD ["/bin/bash"]
-CMD ["tail", "-f", "/dev/null"]
-#CMD ["python", "pinger.py"]
-#CMD ["python", "dns.py"]
+CMD ["./start.sh"]
