@@ -17,13 +17,15 @@ def main():
    # What sites to query? Default to none
    site = []
 
-   while True:
-       try:
-           sites = os.environ["SITES"].split(",")
-       except KeyError:
-           print("no sites g")
-           return 1
+   try:
+       sites = os.environ["SITES"].split(",")
+   except KeyError:
+       print("no sites g")
+       return 1
 
+   print("sites are {}".format(sites))
+
+   while len(sites) > 0:
        for site in sites:
            fetch_time(site)
 
