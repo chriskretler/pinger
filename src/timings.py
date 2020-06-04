@@ -2,7 +2,6 @@ from datetime import datetime
 import os
 import requests
 import time
-from statistics import mean
 
 def fetch_time(site):
     try:
@@ -33,4 +32,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print('getting started')
     main()
