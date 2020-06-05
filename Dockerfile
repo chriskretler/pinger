@@ -10,8 +10,8 @@ RUN pip install -r requirements
 
 WORKDIR /app/
 COPY /src .
-RUN chmod +x start.sh
+#RUN chmod +x start.sh
 
 ENV SITES https://google.com
 
-CMD ["./start.sh"]
+CMD ["python", "timings.py"]
