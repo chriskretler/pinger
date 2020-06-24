@@ -12,6 +12,6 @@ WORKDIR /app/
 COPY /src .
 #RUN chmod +x start.sh
 
-ENV SITES https://google.com
+ARG SITES https://google.com
 
 CMD ["python", "timings.py"]
